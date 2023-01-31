@@ -32,6 +32,74 @@
             width: 100%;
             height: 50px;
         }
+
+        .circle {
+            position: absolute;
+            top: 35vh;
+            left: 45vw;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .circle::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            background: var(--particle-color);
+            border-radius: 50%;
+            box-shadow: 0 0 20px var(--particle-color), 0 0 60px var(--particle-color),
+
+                40px -70px 0 var(--particle-color), 40px -70px 20px var(--particle-color),
+                70px 20px 0 var(--particle-color), 70px 20px 20px var(--particle-color),
+                125px 25px 0 var(--particle-color), 125px 25px 20px var(--particle-color);
+            animation: animate 10s linear infinite, particles 10s ease-in-out infinite;
+        }
+
+        .circle:nth-child(2) {
+            width: 50px;
+            height: 50px;
+            animation: animate 4s linear infinite, particles 8s ease-in-out infinite;
+        }
+
+        .circle:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            animation: animate 8s linear infinite, particles 6s ease-in-out infinite;
+        }
+
+        .circle:nth-child(4) {
+            width: 150px;
+            height: 150px;
+            animation: animate 5s linear infinite, particles 4s ease-in-out infinite;
+        }
+
+        @keyframes animate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes particles {
+
+            0%,
+            100% {
+                scale: .5;
+            }
+
+            50% {
+                scale: 1.25;
+            }
+        }
     </style>
 </head>
 
@@ -45,7 +113,12 @@
         particles4 : #f9f871
         
     -->
-    <div class="crystal-ball"></div>
+    <div class="crystal-ball">
+        <div class="circle" style="--particle-color : #9f6372"></div>
+        <div class="circle" style="--particle-color : #dc8573"></div>
+        <div class="circle" style="--particle-color : #feb869"></div>
+        <div class="circle" style="--particle-color : #f9f871"></div>
+    </div>
 </body>
 
 </html>
